@@ -16,7 +16,7 @@ export class ChatComponent {
   userInput: string = '';
 
   constructor(private messageService: MessagesService, private websocketService: WebsocketService) {}
-  @ViewChild('messageContainer') messageContainer!: ElementRef; // ✅ Reference to message box
+  @ViewChild('messageContainer') messageContainer!: ElementRef;
 
   ngOnInit() {
     this.messageService.messages$.subscribe(msgs => this.messages = msgs);
@@ -28,13 +28,12 @@ export class ChatComponent {
       this.messages.push({ sender: 'user', text: this.userInput });
       this.userInput = '';
 
-      // Simulate bot response after 1 sec
       setTimeout(() => {
         this.messages.push({ sender: 'bot', text: 'Sure! What do you need help with?' });
-        this.scrollToBottom(); // ✅ Scroll to latest message
+        this.scrollToBottom();
       }, 1000);
 
-      this.scrollToBottom(); // ✅ Scroll immediately for user message
+      this.scrollToBottom();
     }
   }
   closeChat() {

@@ -28,13 +28,13 @@
 /* Messages */
 .messages-container {
   display: flex;
-  flex-direction: column; /* ✅ Normal column order */
+  flex-direction: column; 
   overflow-y: auto;
   flex-grow: 1;
   padding: 10px;
   gap: 8px;
   display: flex;
-  justify-content: flex-end; /* ✅ Messages start at bottom initially */
+  justify-content: flex-end;
 }
 
 /* Input Box */
@@ -53,8 +53,6 @@ input {
   font-size: 14px;
   font-weight: 400;
 }
-
-/* Send Button */
 button {
   margin-left: 5px;
   padding: 8px 12px;
@@ -66,7 +64,6 @@ button {
   font-weight: 500;
 }
 
-/* Close Button */
 .close-button {
   background: none;
   border: none;
