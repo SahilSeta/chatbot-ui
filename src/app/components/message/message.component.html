@@ -1,0 +1,6 @@
+<div class="identifier">
+  {{message.sender === 'bot' ? 'TriNet™' : 'You'}}
+</div>
+<div class="message" [ngClass]="{ 'user': message.sender === 'user', 'bot': message.sender === 'bot' }">
+  {{ message.text }}
+</div>

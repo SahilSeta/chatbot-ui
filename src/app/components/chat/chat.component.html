@@ -1,0 +1,22 @@
+<div class="chat-container">
+  <!-- Header Section -->
+  <div class="chat-header">
+    <span class="chat-title">TriNet</span>
+    <button class="close-button" (click)="closeChat()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="100%" viewBox="0 0 256 256"><path fill="#fff" d="M228 128a12 12 0 0 1-12 12H40a12 12 0 0 1 0-24h176a12 12 0 0 1 12 12"></path></svg>
+    </button>
+  </div>
+
+  <!-- Messages Section -->
+  <div class="messages-container" #messageContainer>
+    <app-message *ngFor="let msg of messages" [message]="msg"></app-message>
+  </div>
+
+  <!-- Input Section -->
+  <div class="input-container">
+    <input type="text" [(ngModel)]="userInput" placeholder="Type a message..." (keyup.enter)="sendMessage()" />
+    <button (click)="sendMessage()">
+      <svg xmlns:xlink="https://www.w3.org/1999/xlink" height="16px" version="1.1" viewBox="0 0 16 16" width="16px" xmlns="https://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" id="Artboard" stroke="none" stroke-width="1"><g id="noun_paper-plane_120421" transform="translate(0.000000, -3.242656)" style="fill: rgb(255, 255, 255);"><polygon id="Path" points="16.3315039 9.33094769 2.77771252 3.07533083 4.9878539 8.40935427 13.3079241 9.33094769 4.86252409 10.2505917 2.77771252 15.5865646" transform="translate(9.554608, 9.330948) rotate(-45.000000) translate(-9.554608, -9.330948) "></polygon></g></g></svg>
+    </button>
+  </div>
+</div>
